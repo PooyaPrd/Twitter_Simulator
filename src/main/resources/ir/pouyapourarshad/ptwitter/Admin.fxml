@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane styleClass="admin-root" stylesheets="@style/AdminStyle.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.pouyapourarshad.ptwitter.view.AdminViewController">
+
+    <center>
+        <VBox spacing="28" styleClass="admin-content">
+            <padding>
+                <Insets bottom="36" left="44" right="44" top="36" />
+            </padding>
+
+            <VBox spacing="8">
+                <Label styleClass="page-title" text="Admin Dashboard" />
+                <Label styleClass="page-subtitle" text="Overview of platform statistics and management tools." />
+            </VBox>
+
+            <HBox spacing="22" styleClass="stats-row">
+                <VBox spacing="10" styleClass="stat-card">
+                    <Label styleClass="stat-title" text="Total Users" />
+                    <Label fx:id="usersCountLabel" styleClass="stat-value" text="0" />
+                    <Label styleClass="stat-description" text="Registered accounts" />
+                </VBox>
+
+                <VBox spacing="10" styleClass="stat-card">
+                    <Label styleClass="stat-title" text="Total Posts" />
+                    <Label fx:id="postsCountLabel" styleClass="stat-value" text="0" />
+                    <Label styleClass="stat-description" text="Published posts" />
+                </VBox>
+
+                <VBox spacing="10" styleClass="stat-card">
+                    <Label styleClass="stat-title" text="Total Hashtags" />
+                    <Label fx:id="hashtagsCountLabel" styleClass="stat-value" text="0" />
+                    <Label styleClass="stat-description" text="Available hashtags" />
+                </VBox>
+            </HBox>
+
+            <VBox spacing="18" styleClass="management-card">
+                <VBox spacing="6">
+                    <Label styleClass="section-title" text="Management" />
+                    <Label styleClass="section-description" text="Access complete lists and manage platform data." />
+                </VBox>
+
+                <HBox spacing="16">
+                    <Button fx:id="showUsersButton" styleClass="primary-action-button" text="Show All Users" />
+                    <Button fx:id="showPostsButton" styleClass="secondary-action-button" text="Show All Posts" />
+               <Button fx:id="showUserReportsButton" styleClass="secondary-action-button" text="User Reports" />
+               <Button fx:id="showPostReportsButton" styleClass="secondary-action-button" text="Post Reports" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" text="Logout" />
+         </children>
+      </VBox>
+   </left>
+
+</BorderPane>

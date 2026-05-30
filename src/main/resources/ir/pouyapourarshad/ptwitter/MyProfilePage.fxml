@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+
+<BorderPane prefHeight="800.0" prefWidth="1280.0" styleClass="profile-root" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.pouyapourarshad.ptwitter.view.profilepage.MyProfilePageController">
+    <stylesheets>
+        <URL value="@style/HomeStyle.css" />
+        <URL value="@style/Account.css" />
+    </stylesheets>
+
+    <left>
+        <VBox prefWidth="250.0" spacing="18.0" styleClass="sidebar">
+            <padding>
+                <Insets bottom="28" left="20" right="20" top="28" />
+            </padding>
+
+            <Label styleClass="brand-logo" text="P." />
+
+            <VBox spacing="10.0">
+                <Button fx:id="sidebarHomeButton" styleClass="nav-button" text="⌂  Home" />
+                <Button fx:id="sidebarSearchButton" styleClass="nav-button" text="⌕  Search" />
+
+                <Button fx:id="sidebarProfileButton" text="☺  Profile">
+                    <styleClass>
+                        <String fx:value="nav-button" />
+                        <String fx:value="nav-button-active" />
+                    </styleClass>
+                </Button>
+
+                <Button fx:id="sidebarPostNewButton" text="⊕  Post New">
+               <styleClass>
+                  <String fx:value="nav-button" />
+                  <String fx:value="nav-button-active" />
+               </styleClass></Button>
+            </VBox>
+
+            <Region VBox.vgrow="ALWAYS" />
+
+            <VBox spacing="10.0" styleClass="sidebar-profile-card">
+                <HBox spacing="12.0">
+                    <StackPane maxHeight="42" maxWidth="42" minHeight="42" minWidth="42" styleClass="mini-avatar-wrap">
+                        <Circle fx:id="sidebarUserProfilePicture" radius="21" />
+                    </StackPane>
+
+                    <VBox spacing="2.0">
+                        <Label fx:id="sidebarUserFullName" styleClass="sidebar-name" text="Pouya Dev" />
+                        <Label fx:id="sidebarUsername" styleClass="sidebar-username" text="pouya_dev" />
+                    </VBox>
+                </HBox>
+
+                <Button fx:id="sidebarLogoutButton" styleClass="ghost-button" text="Log out" />
+            </VBox>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox styleClass="main-section">
+            <HBox alignment="CENTER_LEFT" styleClass="topbar">
+                <Label styleClass="page-title" text="Profile" />
+            </HBox>
+
+            <Separator styleClass="section-separator" />
+
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="feed-scroll" vbarPolicy="AS_NEEDED">
+                <content>
+                    <VBox spacing="18.0" styleClass="feed-container">
+                        <padding>
+                            <Insets bottom="28" left="24" right="24" top="20" />
+                        </padding>
+
+                        <VBox spacing="18.0" styleClass="profile-header-card">
+                            <HBox spacing="18.0">
+                                <StackPane styleClass="avatar-wrapper">
+                                    <Circle fx:id="profilePictureCircle" radius="44" />
+                                </StackPane>
+
+                                <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                                    <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                        <Label fx:id="displayNameLabel" styleClass="display-name" text="Pouya Dev" />
+                              <Rectangle fx:id="verifiedBadgeCircle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="24.0" stroke="BLACK" strokeType="INSIDE" width="24.0" />
+                                    </HBox>
+
+                                    <Label fx:id="usernameLabel" styleClass="username-label" text="/@pouya_dev" />
+
+                                    <Label fx:id="bioLabel" styleClass="bio-label" text="Full-stack developer | JavaFX enthusiast | Building PTwitter" wrapText="true" />
+
+                                    <Label fx:id="joinDateLabel" styleClass="join-date-label" text="Member since 2024" />
+
+                                    <HBox spacing="22.0">
+                                        <Button fx:id="followersButton" onAction="#handleFollowers" styleClass="stat-button" text="1,203 Followers" />
+
+                                        <Button fx:id="followingButton" onAction="#handleFollowing" styleClass="stat-button" text="892 Following" />
+                                    </HBox>
+                                </VBox>
+                        <Button onAction="#editProfileHandle" styleClass="secondary-button" text="Edit Profile" />
+                            </HBox>
+                        </VBox>
+
+                        <VBox spacing="16.0" styleClass="section-card">
+                            <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                <VBox spacing="4.0" HBox.hgrow="ALWAYS">
+                                    <Label styleClass="section-title" text="Subscription Plans" />
+
+                                    <HBox spacing="8.0">
+                                        <Label styleClass="balance-label" text="Current balance:" />
+                                        <Label fx:id="balanceValueLabel" styleClass="balance-value" text="/$25" />
+                                    </HBox>
+                                </VBox>
+                        <Label fx:id="TokenBuyStatement" styleClass="balance-label" />
+                        <Label fx:id="currentTokenLabel" styleClass="balance-label" text="Current token:" />
+                        <Button onAction="#buyTokenHandle" styleClass="secondary-button" text="Buy Token" />
+                            </HBox>
+
+                            <HBox spacing="18.0">
+                                <VBox spacing="14.0" styleClass="plan-card blue-plan" HBox.hgrow="ALWAYS">
+                                    <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                        <Label styleClass="plan-dot blue-dot" text="●" />
+                                        <Label styleClass="plan-title" text="Premium Blue" />
+                                        <Region HBox.hgrow="ALWAYS" />
+                                        <Label styleClass="plan-price" text="/$9" />
+                                    </HBox>
+
+                                    <Label styleClass="plan-description" text="Get verified badge, profile boost and extra customization options." wrapText="true" />
+
+                                    <Button onAction="#buyBluePlanButton">
+                                        <styleClass>
+                                            <String fx:value="plan-button" />
+                                            <String fx:value="blue-button" />
+                                        </styleClass>
+                                        <text>BUY ⟵</text>
+                                    </Button>
+                                </VBox>
+
+                                <VBox spacing="14.0" styleClass="plan-card gold-plan" HBox.hgrow="ALWAYS">
+                                    <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                        <Label styleClass="plan-dot gold-dot" text="●" />
+                                        <Label styleClass="plan-title" text="Premium Gold" />
+                                        <Region HBox.hgrow="ALWAYS" />
+                                        <Label styleClass="plan-price" text="/$19" />
+                                    </HBox>
+
+                                    <Label styleClass="plan-description" text="Includes all Blue features plus priority ranking and advanced profile tools." wrapText="true" />
+
+                                    <Button onAction="#buyGoldPlanButton">
+                                        <styleClass>
+                                            <String fx:value="plan-button" />
+                                            <String fx:value="gold-button" />
+                                        </styleClass>
+                                        <text>BUY ⟵</text>
+                                    </Button>
+                                </VBox>
+                            </HBox>
+
+                            <Label fx:id="subscriptionMessageLabel" styleClass="subscription-message-label" text="" />
+                        </VBox>
+
+                        <VBox spacing="16.0" styleClass="section-card">
+                            <HBox alignment="CENTER_LEFT" spacing="14.0">
+                                <Label styleClass="section-title" text="Content Gallery" />
+                                <Region HBox.hgrow="ALWAYS" />
+                            </HBox>
+
+                            <Separator />
+
+                            <FlowPane fx:id="postsFlowPane" hgap="16.0" styleClass="posts-flow" vgap="16.0">
+
+                                <VBox prefWidth="300.0" spacing="12.0" styleClass="post-card">
+                                    <HBox spacing="10.0">
+                                        <StackPane maxHeight="42" maxWidth="42" minHeight="42" minWidth="42" styleClass="post-avatar-wrap">
+                                            <Circle radius="21" styleClass="post-avatar-circle" />
+                                            <Label styleClass="post-avatar-text" text="P" />
+                                        </StackPane>
+
+                                        <VBox spacing="3.0">
+                                            <Label styleClass="post-display-name" text="Pouya Dev" />
+                                            <Label styleClass="post-username" text="/@pouya_dev" />
+                                        </VBox>
+                                    </HBox>
+
+                                    <Label styleClass="post-content" text="Building the advanced profile page for PTwitter with JavaFX." wrapText="true" />
+
+                                    <StackPane prefHeight="135.0" styleClass="post-media-preview">
+                                        <Label styleClass="media-preview-text" text="Post Preview" />
+                                    </StackPane>
+
+                                    <HBox spacing="18.0" styleClass="post-actions">
+                                        <Button styleClass="action-button" text="♡ 120" />
+                                        <Button styleClass="action-button" text="↩ 18" />
+                                        <Button styleClass="action-button" text="⇪ 9" />
+                                    </HBox>
+                                </VBox>
+
+                                <VBox prefWidth="300.0" spacing="12.0" styleClass="post-card">
+                                    <HBox spacing="10.0">
+                                        <StackPane maxHeight="42" maxWidth="42" minHeight="42" minWidth="42" styleClass="post-avatar-wrap">
+                                            <Circle radius="21" styleClass="post-avatar-circle" />
+                                            <Label styleClass="post-avatar-text" text="P" />
+                                        </StackPane>
+
+                                        <VBox spacing="3.0">
+                                            <Label styleClass="post-display-name" text="Pouya Dev" />
+                                            <Label styleClass="post-username" text="/pouya_dev" />
+                                        </VBox>
+                                    </HBox>
+
+                                    <Label styleClass="post-content" text="Dark UI, clean cards, fixed sidebar and dynamic main section." wrapText="true" />
+
+                                    <StackPane prefHeight="135.0" styleClass="post-media-preview">
+                                        <Label styleClass="media-preview-text" text="Image Preview" />
+                                    </StackPane>
+
+                                    <HBox spacing="18.0" styleClass="post-actions">
+                                        <Button styleClass="action-button" text="♡ 88" />
+                                        <Button styleClass="action-button" text="↩ 12" />
+                                        <Button styleClass="action-button" text="⇪ 6" />
+                                    </HBox>
+                                </VBox>
+
+                                <VBox prefWidth="300.0" spacing="12.0" styleClass="post-card">
+                                    <HBox spacing="10.0">
+                                        <StackPane maxHeight="42" maxWidth="42" minHeight="42" minWidth="42" styleClass="post-avatar-wrap">
+                                            <Circle radius="21" styleClass="post-avatar-circle" />
+                                            <Label styleClass="post-avatar-text" text="P" />
+                                        </StackPane>
+
+                                        <VBox spacing="3.0">
+                                            <Label styleClass="post-display-name" text="Pouya Dev" />
+                                            <Label styleClass="post-username" text="/@pouya_dev" />
+                                        </VBox>
+                                    </HBox>
+
+                                    <Label styleClass="post-content" text="Premium plans are ready. Next step: connect balance validation." wrapText="true" />
+
+                                    <StackPane prefHeight="135.0" styleClass="post-media-preview">
+                                        <Label styleClass="media-preview-text" text="Media Preview" />
+                                    </StackPane>
+
+                                    <HBox spacing="18.0" styleClass="post-actions">
+                                        <Button styleClass="action-button" text="♡ 64" />
+                                        <Button styleClass="action-button" text="↩ 7" />
+                                        <Button styleClass="action-button" text="⇪ 3" />
+                                    </HBox>
+                                </VBox>
+
+                            </FlowPane>
+                        </VBox>
+
+                    </VBox>
+                </content>
+            </ScrollPane>
+        </VBox>
+    </center>
+
+</BorderPane>

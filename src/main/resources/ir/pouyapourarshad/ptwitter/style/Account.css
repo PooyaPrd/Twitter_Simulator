@@ -1,0 +1,224 @@
+.root {
+    -fx-font-family: "Segoe UI", "Vazirmatn", sans-serif;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: #0f172a;
+}
+
+.profile-root {
+    -fx-background-color: #0f172a;
+}
+
+/* ===== Sidebar compatibility with Home theme ===== */
+
+.sidebar-avatar-circle {
+    -fx-fill: #3b82f6;
+}
+
+.profile-avatar-circle {
+    -fx-fill: #0f172a;
+}
+
+/* ===== Cards ===== */
+
+.profile-header-card,
+.section-card {
+    -fx-background-color: #111827;
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: #1f2937;
+    -fx-border-width: 1;
+    -fx-padding: 20;
+}
+
+.avatar-wrapper {
+    -fx-min-width: 96;
+    -fx-min-height: 96;
+    -fx-max-width: 96;
+    -fx-max-height: 96;
+    -fx-background-color: linear-gradient(to bottom right, #1d4ed8, #2563eb);
+    -fx-background-radius: 50;
+    -fx-padding: 4;
+}
+
+.avatar-image {
+    -fx-background-radius: 50;
+}
+
+.display-name {
+    -fx-text-fill: #f9fafb;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.verified-badge {
+    -fx-text-fill: #38bdf8;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.username-label {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 15px;
+}
+
+.bio-label {
+    -fx-text-fill: #e5e7eb;
+    -fx-font-size: 14px;
+}
+
+.join-date-label {
+    -fx-text-fill: #9ca3af;
+    -fx-font-size: 13px;
+}
+
+.stat-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e5e7eb;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 0 8 0;
+    -fx-cursor: hand;
+}
+
+.stat-button:hover {
+    -fx-text-fill: #60a5fa;
+}
+
+.section-title {
+    -fx-text-fill: #f9fafb;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* ===== Plans ===== */
+
+.plan-card {
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-padding: 18;
+    -fx-pref-width: 320;
+}
+
+.blue-plan {
+    -fx-background-color: rgba(37, 99, 235, 0.12);
+    -fx-border-color: #3b82f6;
+    -fx-border-width: 1.2;
+}
+
+.gold-plan {
+    -fx-background-color: rgba(245, 158, 11, 0.12);
+    -fx-border-color: #f59e0b;
+    -fx-border-width: 1.2;
+}
+
+.plan-dot {
+    -fx-font-size: 14px;
+}
+
+.blue-dot {
+    -fx-text-fill: #3b82f6;
+}
+
+.gold-dot {
+    -fx-text-fill: #fbbf24;
+}
+
+.plan-title {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.plan-price {
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.plan-description {
+    -fx-text-fill: #cbd5e1;
+    -fx-font-size: 13px;
+    -fx-wrap-text: true;
+}
+
+.plan-button {
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-background-radius: 22;
+    -fx-padding: 10 18 10 18;
+}
+
+.blue-button {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+}
+
+.blue-button:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+.gold-button {
+    -fx-background-color: #eab308;
+    -fx-text-fill: #111827;
+}
+
+.gold-button:hover {
+    -fx-background-color: #ca8a04;
+}
+
+.balance-label {
+    -fx-text-fill: #cbd5e1;
+    -fx-font-size: 14px;
+}
+
+.balance-value {
+    -fx-text-fill: #22c55e;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.secondary-button {
+    -fx-background-color: #1f2937;
+    -fx-text-fill: #f9fafb;
+    -fx-background-radius: 10;
+    -fx-padding: 8 14 8 14;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #374151;
+}
+
+.subscription-message-label {
+    -fx-text-fill: #fca5a5;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+.primary-save-button {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-padding: 10 20 10 20;
+    -fx-cursor: hand;
+}
+
+.primary-save-button:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+
+.separator .line {
+    -fx-border-color: #243041;
+}
+
+.posts-flow {
+    -fx-padding: 8 0 0 0;
+}

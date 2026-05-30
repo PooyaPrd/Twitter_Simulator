@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="733.0" prefWidth="1100.0" stylesheets="@style/Auth.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.pouyapourarshad.ptwitter.view.AuthViewController">
+
+    <center>
+        <HBox alignment="CENTER">
+
+            <StackPane prefWidth="460.0" styleClass="branding-pane">
+                <VBox alignment="CENTER_LEFT" maxWidth="320" spacing="18">
+                    <Label styleClass="brand-logo" text="P" />
+                    <Label styleClass="brand-title" text="Welcome to P" />
+                    <Label styleClass="brand-subtitle" text="Join the P, where everyone has something to say and nobody asked." wrapText="true" />
+
+                    <VBox spacing="10" styleClass="feature-box">
+                        <Label styleClass="feature-text" text="• Post and interact with content" />
+                        <Label styleClass="feature-text" text="• Follow users and explore profiles" />
+                        <Label styleClass="feature-text" text="• Use hashtags to summon strangers" />
+                        <Label styleClass="feature-text" text="• Unlock premium features because why not" />
+                    </VBox>
+                </VBox>
+                <padding>
+                    <Insets bottom="40" left="45" right="45" top="40" />
+                </padding>
+            </StackPane>
+
+            <StackPane prefWidth="640.0" styleClass="auth-pane">
+                <VBox alignment="CENTER" maxHeight="920.0" maxWidth="430" prefHeight="900.0" prefWidth="430.0" spacing="22">
+
+                    <VBox alignment="CENTER" prefHeight="153.0" prefWidth="430.0" spacing="8">
+                        <Label styleClass="mini-logo" text="P" />
+                        <Label styleClass="auth-title" text="Account Access" />
+                        <Label styleClass="auth-subtitle" text="Login or create your account" />
+                    </VBox>
+
+                    <TabPane styleClass="auth-tab-pane" tabClosingPolicy="UNAVAILABLE">
+
+                        <Tab text="Login">
+                            <content>
+                                <VBox spacing="14" styleClass="form-card">
+                                    <Label styleClass="form-title" text="Sign In" />
+
+                                    <VBox spacing="6">
+                                        <Label styleClass="input-label" text="Username or Email" />
+                                        <TextField fx:id="loginUsernameOrEmailField" promptText="Enter your username or email" styleClass="input-field" />
+                                    </VBox>
+
+                                    <VBox spacing="6">
+                                        <Label styleClass="input-label" text="Password" />
+                                        <PasswordField fx:id="loginPasswordField" promptText="Enter your password" styleClass="input-field" />
+                                    </VBox>
+
+                                    <Label fx:id="loginMessageLabel" styleClass="message-label" text="" />
+
+                                    <Button fx:id="loginButton" onAction="#handleLogin" styleClass="primary-button" text="Sign In" />
+                                </VBox>
+                            </content>
+                        </Tab>
+
+                        <Tab text="Register">
+                     <content>
+                        <ScrollPane hbarPolicy="NEVER" hmax="0.0" prefHeight="429.0" prefWidth="430.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="714.0" prefWidth="431.0">
+                                 <children>
+                                            <VBox spacing="14" styleClass="form-card">
+                                                <Label styleClass="form-title" text="Create Account" />
+            
+                                                            <VBox spacing="6">
+                                                    <Label styleClass="input-label" text="Full Name" />
+                                                    <TextField fx:id="fullNameField" promptText="Enter your full name" styleClass="input-field" />
+                                                </VBox>
+            
+                                                            <VBox spacing="6">
+                                                    <Label styleClass="input-label" text="Username" />
+                                                    <TextField fx:id="usernameField" promptText="Choose a username" styleClass="input-field" />
+                                                </VBox>
+            
+                                                            <VBox spacing="6">
+                                                    <Label styleClass="input-label" text="Email" />
+                                                    <TextField fx:id="emailField" promptText="Enter your email" styleClass="input-field" />
+                                                </VBox>
+            
+                                                            <VBox spacing="6">
+                                                    <Label styleClass="input-label" text="Phone Number" />
+                                                    <TextField fx:id="phoneField" promptText="Enter your phone number" styleClass="input-field" />
+                                                </VBox>
+            
+                                                            <VBox spacing="6">
+                                                    <Label styleClass="input-label" text="Password" />
+                                                    <HBox alignment="CENTER_LEFT" spacing="8">
+                                                        <PasswordField fx:id="registerPasswordField" promptText="Create a password" styleClass="input-field" HBox.hgrow="ALWAYS" />
+                                                        <TextField fx:id="registerPasswordVisibleField" managed="false" promptText="Create a password" styleClass="input-field" visible="false" HBox.hgrow="ALWAYS" />
+                                                        <Button fx:id="togglePasswordButton" styleClass="secondary-button" text="Show" />
+                                                    </HBox>
+                                                </VBox>
+            
+                                                            <VBox spacing="6">
+                                                    <Label styleClass="input-label" text="Confirm Password" />
+                                                    <HBox alignment="CENTER_LEFT" spacing="8">
+                                                        <PasswordField fx:id="confirmPasswordField" promptText="Repeat your password" styleClass="input-field" HBox.hgrow="ALWAYS" />
+                                                        <TextField fx:id="confirmPasswordVisibleField" managed="false" promptText="Repeat your password" styleClass="input-field" visible="false" HBox.hgrow="ALWAYS" />
+                                                        <Button fx:id="toggleConfirmPasswordButton" styleClass="secondary-button" text="Show" />
+                                                    </HBox>
+                                                </VBox>
+                                       <VBox spacing="6">
+                                          <children>
+                                             <Label styleClass="input-label" text="Birthday" />
+                                             <DatePicker fx:id="birthdayField" prefHeight="23.0" prefWidth="380.0" />
+                                          </children>
+                                       </VBox>
+            
+                                                            <Label fx:id="registerMessageLabel" styleClass="message-label" text="" />
+            
+                                                            <Button fx:id="registerButton" onAction="#handleRegister" styleClass="primary-button" text="Create Account" />
+                                            </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                     </content>
+                        </Tab>
+                    </TabPane>
+                </VBox>
+
+                <padding>
+                    <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+                </padding>
+            </StackPane>
+        </HBox>
+    </center>
+</BorderPane>

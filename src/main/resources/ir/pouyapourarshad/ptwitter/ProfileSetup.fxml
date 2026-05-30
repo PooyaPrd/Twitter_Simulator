@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane prefHeight="720.0" prefWidth="1180.0" styleClass="root" stylesheets="@style/profile-setup.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.pouyapourarshad.ptwitter.view.ProfileSetupViewController">
+
+    <center>
+        <HBox alignment="CENTER" spacing="30.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+            </padding>
+
+            <VBox maxWidth="430.0" prefWidth="430.0" spacing="20.0" styleClass="setup-card">
+                <padding>
+                    <Insets bottom="28.0" left="28.0" right="28.0" top="28.0" />
+                </padding>
+
+                <VBox spacing="6.0">
+                    <Label styleClass="card-title" text="Complete your profile" />
+                    <Label styleClass="card-subtitle" text="Add a photo, write a bio, and let people know who you are." wrapText="true" />
+                </VBox>
+
+                <Separator styleClass="soft-separator" />
+
+                <VBox alignment="CENTER" spacing="14.0">
+                    <StackPane styleClass="avatar-wrapper">
+                        <Circle fx:id="profileCircle" radius="42.0" styleClass="avatar-circle" />
+                        <Label fx:id="plusOnProfile" styleClass="avatar-plus" text="+" />
+                    </StackPane>
+
+                    <Button fx:id="choosePhotoButton" onAction="#handleChoosePhoto" styleClass="secondary-button" text="Choose Profile Photo" />
+                </VBox>
+
+                <VBox spacing="12.0">
+                    <Label styleClass="field-label" text="Full Name" />
+                    <TextField fx:id="fullNameField" editable="false" promptText="Enter your full name" styleClass="dark-field" />
+
+                    <Label styleClass="field-label" text="Bio" />
+                    <TextArea fx:id="bioArea" prefRowCount="5" promptText="Tell the world something interesting about yourself..." styleClass="dark-area" wrapText="true" />
+                </VBox>
+
+                <Label fx:id="profileMessageLabel" styleClass="message-label" text="" wrapText="true" />
+
+                <HBox spacing="12.0">
+                    <Button fx:id="skipButton" onAction="#handleSkip" styleClass="ghost-button" text="Skip for now" />
+
+                    <Button fx:id="saveContinueButton" onAction="#handleSaveAndContinue" styleClass="primary-button" text="Save and Continue" />
+                </HBox>
+            </VBox>
+
+            <VBox maxWidth="520.0" prefWidth="520.0" spacing="20.0" styleClass="setup-card hashtags-card">
+                <padding>
+                    <Insets bottom="28.0" left="28.0" right="28.0" top="28.0" />
+                </padding>
+
+                <VBox spacing="6.0">
+                    <Label styleClass="card-title" text="Popular Hashtags" />
+                    <Label styleClass="card-subtitle" text="Pick a few topics you like so your feed feels less random and slightly more magical." wrapText="true" />
+                </VBox>
+
+                <Separator styleClass="soft-separator" />
+
+                <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="transparent-scroll">
+                    <content>
+                        <FlowPane fx:id="hashtagsFlowPane" hgap="10.0" prefWrapLength="430.0" styleClass="hashtags-flow" vgap="10.0">
+                        </FlowPane>
+                    </content>
+                </ScrollPane>
+
+                <Label styleClass="hint-label" text="Selected hashtags will help personalize your experience." wrapText="true" />
+            </VBox>
+
+        </HBox>
+    </center>
+</BorderPane>

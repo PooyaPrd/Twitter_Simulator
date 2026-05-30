@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<?import java.net.URL?>
+<BorderPane prefHeight="800.0"
+            prefWidth="1280.0" styleClass="home-root"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ir.pouyapourarshad.ptwitter.view.SearchViewController">
+    <stylesheets>
+        <URL value="@style/HomeStyle.css" />
+        <URL value="@style/Account.css" />
+        <URL value="@style/SearchStyle.css"/>
+    </stylesheets>
+    <left>
+        <VBox prefWidth="250.0" spacing="18.0" styleClass="sidebar">
+            <padding>
+                <Insets bottom="28" left="20" right="20" top="28" />
+            </padding>
+
+            <Label styleClass="brand-logo" text="P." />
+
+            <VBox spacing="10.0">
+                <Button fx:id="sidebarHomeButton" styleClass="nav-button" text="⌂  Home" />
+                <Button fx:id="sidebarSearchButton" text="⌕  Search">
+                    <styleClass>
+                        <String fx:value="nav-button" />
+                        <String fx:value="nav-button-active" />
+                    </styleClass>
+                </Button>
+                <Button fx:id="sidebarProfileButton" styleClass="nav-button" text="☺  Profile" />
+                <Button fx:id="sidebarPostNewButton" styleClass="nav-button" text="⊕  Post New" />
+            </VBox>
+
+            <Region VBox.vgrow="ALWAYS" />
+
+            <VBox spacing="10.0" styleClass="sidebar-profile-card">
+                <HBox spacing="12.0">
+                    <StackPane maxHeight="42" maxWidth="42" minHeight="42" minWidth="42" styleClass="mini-avatar-wrap">
+                        <Circle fx:id="userProfilePicture" radius="21" style="-fx-fill: BLUE;" />
+                    </StackPane>
+
+                    <VBox spacing="2.0">
+                        <Label fx:id="userFullName" styleClass="sidebar-name" text="Pouya Dev" />
+                        <Label fx:id="userUsername" styleClass="sidebar-username" text="pouya_dev" />
+                    </VBox>
+                </HBox>
+
+                <Button fx:id="sidebarLogoutButton" styleClass="ghost-button" text="Log out" />
+            </VBox>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox styleClass="main-section">
+            <HBox alignment="CENTER_LEFT" styleClass="topbar">
+                <Label styleClass="page-title" text="Search" />
+            </HBox>
+
+            <Separator styleClass="section-separator" />
+
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="feed-scroll" vbarPolicy="AS_NEEDED">
+                <content>
+                    <VBox spacing="18.0" styleClass="search-container">
+                        <padding>
+                            <Insets bottom="24" left="24" right="24" top="20" />
+                        </padding>
+
+                        <VBox spacing="16.0" styleClass="search-panel">
+                            <Label styleClass="search-section-title" text="Find anything" />
+
+                            <HBox alignment="CENTER_LEFT" spacing="12.0">
+                                <TextField fx:id="searchField" promptText="Search..." styleClass="search-field" HBox.hgrow="ALWAYS" />
+                                <ChoiceBox fx:id="searchByChoiceBox" styleClass="search-choice-box">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Accounts" />
+                                            <String fx:value="Posts" />
+                                            <String fx:value="Hashtags" />
+                                        </FXCollections>
+                                    </items>
+                                    <value>
+                                        <String fx:value="Accounts" />
+                                    </value>
+                                </ChoiceBox>
+                                <Button onAction="#searchButtonHandler" styleClass="search-button" text="Search" />
+                            </HBox>
+                        </VBox>
+
+                        <VBox fx:id="resultsContainer" spacing="14.0">
+                            <Label styleClass="search-results-title" text="Results" />
+
+                            <VBox spacing="14.0" styleClass="account-result-card">
+                                <HBox alignment="TOP_LEFT" spacing="14.0">
+                                    <StackPane maxHeight="56" maxWidth="56" minHeight="56" minWidth="56" styleClass="result-avatar-wrap">
+                                        <Circle radius="28" styleClass="result-avatar-circle" />
+                                        <Label styleClass="result-avatar-text" text="A" />
+                                    </StackPane>
+
+                                    <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+                                        <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                            <Label styleClass="result-name" text="Amir Karimi" />
+                                            <Label styleClass="result-username" text="/@amir_dev" />
+                                        </HBox>
+
+                                        <Label styleClass="result-bio" text="Backend developer, coffee addict, and someone who writes bugs with confidence." wrapText="true" />
+                                    </VBox>
+                                </HBox>
+                            </VBox>
+
+                            <VBox spacing="14.0" styleClass="account-result-card">
+                                <HBox alignment="TOP_LEFT" spacing="14.0">
+                                    <StackPane maxHeight="56" maxWidth="56" minHeight="56" minWidth="56" styleClass="result-avatar-wrap">
+                                        <Circle radius="28" styleClass="result-avatar-circle" />
+                                        <Label styleClass="result-avatar-text" text="N" />
+                                    </StackPane>
+
+                                    <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+                                        <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                            <Label styleClass="result-name" text="Nika Fallah" />
+                                            <Label styleClass="result-username" text="/@nika_ui" />
+                                        </HBox>
+
+                                        <Label styleClass="result-bio" text="UI/UX designer who loves minimal interfaces, dark themes, and clean product thinking." wrapText="true" />
+                                    </VBox>
+                                </HBox>
+                            </VBox>
+                        </VBox>
+                    </VBox>
+                </content>
+            </ScrollPane>
+        </VBox>
+    </center>
+
+</BorderPane>

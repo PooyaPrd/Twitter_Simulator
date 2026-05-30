@@ -1,0 +1,143 @@
+.post-new-root {
+    -fx-background-color: #0f172a;
+}
+
+.post-author-avatar-wrap {
+    -fx-background-color: linear-gradient(to bottom right, #1d4ed8, #2563eb);
+    -fx-background-radius: 50;
+}
+
+.small-display-name {
+    -fx-font-size: 18px;
+}
+
+.post-content-area {
+    -fx-background-color: #111827;
+    -fx-border-color: #334155;
+    -fx-border-radius: 14;
+    -fx-background-radius: 14;
+    -fx-text-fill: #f9fafb;
+    -fx-prompt-text-fill: #94a3b8;
+    -fx-padding: 14;
+    -fx-font-size: 15px;
+}
+
+.post-content-area:focused {
+    -fx-border-color: #3b82f6;
+    -fx-border-width: 1.4;
+}
+
+.post-content-area .content {
+    -fx-background-color: #111827;
+    -fx-background-radius: 14;
+}
+
+.upload-dropzone {
+    -fx-background-color: #0b1220;
+    -fx-border-color: #334155;
+    -fx-border-style: segments(10, 10);
+    -fx-border-radius: 18;
+    -fx-background-radius: 18;
+    -fx-padding: 20;
+}
+
+.upload-icon {
+    -fx-text-fill: #60a5fa;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.upload-title {
+    -fx-text-fill: #f9fafb;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.upload-subtitle {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 13px;
+}
+
+.selected-file-card {
+    -fx-background-color: #0b1220;
+    -fx-background-radius: 14;
+    -fx-border-color: #1f2937;
+    -fx-border-radius: 14;
+    -fx-padding: 14;
+}
+
+.selected-file-label {
+    -fx-text-fill: #cbd5e1;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.selected-file-name {
+    -fx-text-fill: #f9fafb;
+    -fx-font-size: 13px;
+}
+
+.selected-file-meta {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 12px;
+}
+
+.post-meta-label {
+    -fx-text-fill: #93c5fd;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.ghost-danger-button {
+    -fx-background-color: transparent;
+    -fx-border-color: #ef4444;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-text-fill: #f87171;
+    -fx-padding: 8 14 8 14;
+    -fx-cursor: hand;
+}
+
+.ghost-danger-button:hover {
+    -fx-background-color: rgba(239, 68, 68, 0.10);
+}
+
+.primary-save-button {
+    -fx-background-color: linear-gradient(to right, #2563eb, #1d4ed8);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 22 12 22;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-cursor: hand;
+}
+
+.primary-save-button:hover {
+    -fx-background-color: linear-gradient(to right, #3b82f6, #2563eb);
+}
+
+.primary-save-button:pressed {
+    -fx-background-color: #1e40af;
+}
+
+.secondary-button {
+    -fx-background-color: #1e293b;
+    -fx-text-fill: #e2e8f0;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 20 12 20;
+    -fx-background-radius: 12;
+    -fx-border-color: #334155;
+    -fx-border-radius: 12;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #334155;
+    -fx-border-color: #475569;
+}
+
+.secondary-button:pressed {
+    -fx-background-color: #0f172a;
+}

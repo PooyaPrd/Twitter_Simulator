@@ -1,0 +1,115 @@
+.edit-profile-root {
+    -fx-background-color: #0f172a;
+}
+
+.edit-profile-container {
+    -fx-background-color: transparent;
+}
+
+.edit-avatar-wrapper {
+    -fx-min-width: 132;
+    -fx-min-height: 132;
+    -fx-max-width: 132;
+    -fx-max-height: 132;
+    -fx-background-color: linear-gradient(to bottom right, #1d4ed8, #2563eb);
+    -fx-background-radius: 70;
+    -fx-alignment: center;
+    -fx-padding: 6;
+}
+
+.edit-avatar-image {
+    -fx-background-radius: 60;
+}
+
+.edit-avatar-placeholder {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.form-label {
+    -fx-text-fill: #e5e7eb;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.form-text-field,
+.form-text-area,
+.form-date-picker {
+    -fx-background-color: #111827;
+    -fx-border-color: #334155;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-text-fill: #f9fafb;
+    -fx-prompt-text-fill: #94a3b8;
+    -fx-padding: 12 14 12 14;
+    -fx-font-size: 14px;
+}
+
+.form-text-field:focused,
+.form-text-area:focused,
+.form-date-picker:focused {
+    -fx-border-color: #3b82f6;
+    -fx-border-width: 1.4;
+}
+
+.form-text-area .content {
+    -fx-background-color: #111827;
+    -fx-background-radius: 12;
+}
+
+.form-date-picker > .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: #f9fafb;
+}
+
+.form-date-picker > .arrow-button {
+    -fx-background-color: #1f2937;
+    -fx-background-radius: 0 12 12 0;
+}
+
+.preview-card {
+    -fx-background-color: #0b1220;
+    -fx-background-radius: 14;
+    -fx-border-color: #1f2937;
+    -fx-border-radius: 14;
+    -fx-padding: 16;
+}
+
+.preview-info-label {
+    -fx-text-fill: #cbd5e1;
+    -fx-font-size: 13px;
+}
+
+.primary-save-button {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-padding: 10 20 10 20;
+    -fx-cursor: hand;
+}
+
+.primary-save-button:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+.ghost-danger-button {
+    -fx-background-color: transparent;
+    -fx-border-color: #ef4444;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-text-fill: #f87171;
+    -fx-padding: 8 14 8 14;
+    -fx-cursor: hand;
+}
+
+.ghost-danger-button:hover {
+    -fx-background-color: rgba(239, 68, 68, 0.10);
+}
+
+.status-message-label {
+    -fx-text-fill: #93c5fd;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
