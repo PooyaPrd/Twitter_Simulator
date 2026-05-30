@@ -27,6 +27,11 @@ The project follows the **Model-View-Controller (MVC)** architectural pattern:
 * **Model**: Data structures and business logic
 * **View**: JavaFX user interface and CSS styling
 * **Controller**: Communication between UI and application logic
+  
+## Screenshots
+<img width="1598" height="752" alt="01" src="https://github.com/user-attachments/assets/812569d0-5933-4a3b-b86c-29b52b35277e" />
+<img width="1586" height="752" alt="02" src="https://github.com/user-attachments/assets/cc10837e-31d3-4c82-963b-40145494be0b" />
+
 
 ## Notes
 
