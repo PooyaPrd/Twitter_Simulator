@@ -87,6 +87,9 @@ public class AuthController {
 
     public static LoginError loginUser(String username, String password){
         if (database.isValidUsernameAndPassword(username, password)){
+            if (database.getUserByUsername(username).getIsLocked()){
+                return LoginError.LOCKED_ACCOUNT;
+            }
             System.out.println("User with username: " + username + "Logged in.");
             database.setCurrentAccount(database.getUserByUsername(username));
             return null;
@@ -144,14 +147,17 @@ public class AuthController {
 //        return true;
     }
     public static boolean isPasswordValid(String password){
-        return true;
-//        String passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=!])\\S{8,}$";
-//        return password.matches(passwordRegex);
+//        return true;
+        String passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=!])\\S{8,}$";
+        return password.matches(passwordRegex);
     }
     public static boolean isPhoneNumberValid(String phoneNumber){
 //        return true;
         String phoneRegex = "^09\\d{9}$";
         return phoneNumber.matches(phoneRegex);
     }
-
+    public static void handleLogOut(){
+        database.setCurrentAccount(null);
+        SceneManager.showOnSameStage("Auth.fxml", "| Welcome!");
+    }
 }

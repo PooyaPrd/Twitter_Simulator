@@ -2,6 +2,7 @@ package ir.pouyapourarshad.ptwitter.view;
 
 import ir.pouyapourarshad.ptwitter.controllers.modelControllers.AccountController;
 import ir.pouyapourarshad.ptwitter.controllers.pageControllers.SearchController;
+import ir.pouyapourarshad.ptwitter.controllers.serviceControllers.AuthController;
 import ir.pouyapourarshad.ptwitter.models.users.User;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -18,6 +19,9 @@ public class UsersPageViewController {
     public void initialize (){
         ArrayList<User> users =  SearchController.getAccountResult("");
         resultsContainer.getChildren().clear();
+        Button logout = new Button("LogOut");
+        logout.setOnMouseClicked(e -> handleLogout());
+        resultsContainer.getChildren().add(logout);
         for (User user: users){
             VBox card = AccountController.createAccountCard(user);
             Button reportButton = new Button();
@@ -30,5 +34,9 @@ public class UsersPageViewController {
     }
     private void blockUser(User user){
         user.setIsLock(true);
+        System.out.println();
+    }
+    private void handleLogout(){
+        AuthController.handleLogOut();
     }
 }

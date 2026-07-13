@@ -37,8 +37,7 @@ public class SidebarController {
         SceneManager.showOnSameStage("MyProfilePage.fxml", "| Account Management");
     }
     public static void handleLogOut(){
-        database.setCurrentAccount(null);
-        SceneManager.showOnSameStage("Auth.fxml", "| Welcome!");
+        AuthController.handleLogOut();
     }
 
     public static void handlePostNewButton(){

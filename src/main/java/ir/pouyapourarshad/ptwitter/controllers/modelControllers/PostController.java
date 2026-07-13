@@ -43,6 +43,7 @@ public class PostController {
         return postBoxBuilder(true, post);
     }
 
+
     private static VBox postBoxBuilder(boolean isShort, Post post){
         post.addView();
         VBox card = new VBox();
@@ -111,15 +112,22 @@ public class PostController {
         return content;
     }
 
+    private static void handleShareButton(int postId){
+        System.out.println("https://ptwitter.ir/posts/" + postId);
+    }
+
     private static HBox interactionSectionBuilder(Post post, VBox card){
         HBox hBox = new HBox(18);
         Button likesButton = new Button();
         Button repliesButton = new Button();
         Button viewsButton = new Button();
+        Button shareButton = new Button();
         likesButton.getStyleClass().add("action-button");
         likesButton.setOnMouseClicked(e -> handleLikeButton(post, likesButton));
         viewsButton.getStyleClass().add("action-button");
         repliesButton.getStyleClass().add("action-button");
+        shareButton.getStyleClass().add("action-button");
+        shareButton.setOnMouseClicked(e -> handleShareButton(post.getId()));
         repliesButton.setOnMouseClicked(e -> handleReply(post));
         likesButton.setText("♡ "+post.getLikes());
         repliesButton.setText("↩ "+post.getReplyPostIds().size());
